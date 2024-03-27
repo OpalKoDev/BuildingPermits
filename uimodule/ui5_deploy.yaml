@@ -1,0 +1,55 @@
+specVersion: "2.2"
+metadata:
+  name: BuildingPermits
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: uimodule/webapp
+framework:
+  name: SAPUI5
+  version: 1.80.0
+  # libraries:
+    # - name: sap.ui.core
+    # - name: sap.m
+    # - name: sap.ui.layout
+    # - name: themelib_sap_fiori_3
+server:
+  customMiddleware:
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression
+      configuration:
+        port: env:ENV_PORT
+        path: uimodule/webapp
+    - name: ui5-middleware-route-proxy
+      afterMiddleware: compression
+      configuration:
+        debug: false
+        /sap/opu/odata/sap/:
+          target: TODO https://meksapgwd.mekorot.co.il:443
+          auth:
+            fromEnv: false
+            user: oTODO
+            pass: TODO
+builder:
+  customTasks:
+  - name: ui5-task-nwabap-deployer
+    afterTask: generateVersionInfo
+    configuration:
+      resources:
+        path: dist/uimodule
+        pattern: "**/*.*"
+      connection:
+        server: TODO https://meksapgwd.mekorot.co.il:443
+        client: 100
+        useStrictSSL: false
+      authentication:
+        user: TODO
+        password: TODO
+      ui5:
+        language: EN
+        package: ZUI5
+        bspContainer: BuildingPermits
+        bspContainerText: BuildingPermits
+        transportNo: TODO
+        calculateApplicationIndex: true

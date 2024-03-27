@@ -1,0 +1,23 @@
+{
+  "generator-template-ui5-project": {
+    "projectname": "BuildingPermits",
+    "namespaceUI5": "com.myorg",
+    "enableFPM": false,
+    "platform": "Static webserver",
+    "viewtype": "XML",
+    "ui5libs": "Local resources (SAPUI5)",
+    "newdir": false,
+    "initrepo": false,
+    "namespaceURI": "com/myorg",
+    "uimodules": [
+      "uimodule"
+    ],
+    "opa5Journeys": [
+      "Main"
+    ],
+    "opa5pos": [
+      "Main"
+    ],
+    "setupCompleted": true
+  }
+}

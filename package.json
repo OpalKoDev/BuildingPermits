@@ -1,0 +1,39 @@
+{
+  "name": "BuildingPermits",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
+    "startSandBox": "ui5 serve --config=uimodule/ui5.yaml -o test/flpSandbox.html?sap-language=HE#BuildingPermits-tile",
+    "build:ui": "run-s build:uimodule",
+    "deploy": "run-s build:ui",
+    "test": "run-s lint karma",
+    "karma-ci": "karma start karma-ci.conf.js",
+    "clearCoverage": "shx rm -rf coverage",
+    "karma": "run-s clearCoverage karma-ci",
+    "lint": "eslint ./**/webapp/**/*.js && prettier --plugin=@prettier/plugin-xml --check ./**/webapp/**/*.{js,xml} --no-error-on-unmatched-pattern",
+    "lint-fix": "eslint ./**/webapp/**/*.js --fix && prettier --plugin=@prettier/plugin-xml --write ./**/webapp/**/*.{js,xml} --no-error-on-unmatched-pattern",
+    "build:uimodule": "ui5 build --config=uimodule/ui5_deploy.yaml --clean-dest --a --dest dist/uimodule"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4",
+    "@ui5/cli": "^3",
+    "ui5-middleware-livereload": "latest",
+    "karma": "^6.4.2",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-coverage": "^2.2.0",
+    "karma-ui5": "latest",
+    "npm-run-all": "^4.1.5",
+    "eslint": "latest",
+    "prettier": "latest",
+    "@prettier/plugin-xml": "latest",
+    "ui5-task-nwabap-deployer": "*",
+    "ui5-middleware-route-proxy": "*"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-livereload",
+      "ui5-task-nwabap-deployer",
+      "ui5-middleware-route-proxy"
+    ]
+  }
+}
