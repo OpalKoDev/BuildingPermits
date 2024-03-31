@@ -84,46 +84,46 @@
     "rootView": {
       "viewName": "BuildingPermits.view.App",
       "type": "XML",
-      "async": true,
-      "id": "fcl"
+      "id": "App"
     },
     "routing": {
 			"config": {
 				"routerClass"		: "sap.m.routing.Router",
 				"viewType"			: "XML",
 				"viewPath"			: "BuildingPermits.view",
-				"controlId"		    : "flexibleColumnLayout",
+				"controlId"		    : "App",
 				"controlAggregation": "pages",
-				"async"				: true
+				"async"				: true,
+				"bypassed"			: {
+					"target": [ ]
+				}
 			},
 			"routes": [
 				{
 					"pattern": "",
 					"name"	 : "Main",
-					"target" : ["App"]
+					"target" : ["Main"]
 				},
-        {
+				{
 					"pattern": "Create",
 					"name"	 : "Create",
 					"target" : ["Create"]
 				}
 			],
 			"targets": {
-				"App": {
-					"viewType"		    : "XML",
-					"viewName"			: "App",
-					"viewLevel"			: 1,
-					"controlAggregation": "detailPages",
-					"transition"	    : "slide",
-					"clearAggregation"  : true
+				"Main": {
+					"viewType"		  : "XML",
+					"viewName"		  : "Main",
+					"viewLevel"		  : 1,
+					"transition"	  : "slide",
+					"clearAggregation": true
 				},
         "Create": {
-					"viewType"		    : "XML",
-					"viewName"			: "Create",
-					"viewLevel"			: 1,
-					"controlAggregation": "Create",
-					"transition"	    : "slide",
-					"clearAggregation"  : true
+					"viewType"		  : "XML",
+					"viewName"		  : "Create",
+					"viewLevel"		  : 1,
+					"transition"	  : "slide",
+					"clearAggregation": true
 				}
 			}
 		}
