@@ -100,7 +100,7 @@
 			},
 			"routes": [
 				{
-					"pattern": "",
+					"pattern": "BuildingPermit/{BuildingPermit}",
 					"name"	 : "Main",
 					"target" : ["Main"]
 				},
