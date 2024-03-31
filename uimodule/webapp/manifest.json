@@ -68,7 +68,9 @@
 			},
       "JSON":{
         "type": "sap.ui.model.json.JSONModel",
-        "settings": {},
+        "settings": {
+          "layout": "TwoColumnsBeginExpanded"
+        },
         "preload": false
       }
     },
@@ -79,40 +81,51 @@
         }
       ]
     },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "async": true,
-        "viewPath": "BuildingPermits.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
-      },
-      "routes": [
-        {
-          "name": "RouteMainView",
-          "pattern": ":?query:",
-          "target": [
-            "TargetMainView"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetMainView": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "MainView",
-          "viewName": "MainView"
-        }
-      }
-    },
     "rootView": {
       "viewName": "BuildingPermits.view.App",
       "type": "XML",
       "async": true,
-      "id": "App"
-    }
+      "id": "fcl"
+    },
+    "routing": {
+			"config": {
+				"routerClass"		: "sap.m.routing.Router",
+				"viewType"			: "XML",
+				"viewPath"			: "BuildingPermits.view",
+				"controlId"		    : "flexibleColumnLayout",
+				"controlAggregation": "pages",
+				"async"				: true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name"	 : "Main",
+					"target" : ["App"]
+				},
+        {
+					"pattern": "Create",
+					"name"	 : "Create",
+					"target" : ["Create"]
+				}
+			],
+			"targets": {
+				"App": {
+					"viewType"		    : "XML",
+					"viewName"			: "App",
+					"viewLevel"			: 1,
+					"controlAggregation": "detailPages",
+					"transition"	    : "slide",
+					"clearAggregation"  : true
+				},
+        "Create": {
+					"viewType"		    : "XML",
+					"viewName"			: "Create",
+					"viewLevel"			: 1,
+					"controlAggregation": "Create",
+					"transition"	    : "slide",
+					"clearAggregation"  : true
+				}
+			}
+		}
   }
 }

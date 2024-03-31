@@ -1,0 +1,9 @@
+<mvc:View
+	controllerName="BuildingPermits.controller.App"
+	displayBlock="true"
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Text text="Create" />
+
+</mvc:View>

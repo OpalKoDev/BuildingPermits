@@ -8,6 +8,12 @@ sap.ui.define(
 
         return Controller.extend("Detail.controller.MainView", {
             onInit: function () {},
+            onCloseDetailDetail: function() {
+                this.getModel("JSON").setProperty("/layout","OneColumn");
+            },
+            onOpenDetailDetail: function() {
+                this.getModel("JSON").setProperty("/layout","TwoColumnsBeginExpanded");
+            }
         });
     },
 );

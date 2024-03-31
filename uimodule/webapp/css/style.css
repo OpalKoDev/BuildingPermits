@@ -5,3 +5,9 @@
     border-radius: 15px;
     margin: 0.5rem;
 }
+.backgroundWhite {
+    background-color: white;
+}
+/* .sapFFCLColumnSeparatorBegin{
+    display: none !important;
+} */
