@@ -55,8 +55,19 @@ sap.ui.define([
 											icon     : "sap-icon://bbyd-dashboard",
 											targetURL: "#BuildingPermits-tile&/Create"
 										}
+									},
+									{
+										tileType: "sap.ushell.ui.tile.StaticTile",
+										properties: {
+											title	 : "כל ההיתרים",
+											subtitle : "",
+											icon     : "sap-icon://bbyd-dashboard",
+											targetURL: "#BuildingPermits-tile&/AllBuldingPermits"
+										}
 									}
 								]
+
+
 							}
 						]
 					}

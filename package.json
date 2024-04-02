@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
-    "startSandBox": "ui5 serve --config=uimodule/ui5.yaml -o test/flpSandbox.html?sap-language=HE#BuildingPermits-tile&/BuildingPermit/123",
+    "startSandBox": "ui5 serve --config=uimodule/ui5.yaml -o test/flpSandbox.html?sap-language=HE",
     "build:ui": "run-s build:uimodule",
     "deploy": "run-s build:ui",
     "test": "run-s lint karma",

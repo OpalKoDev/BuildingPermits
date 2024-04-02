@@ -108,6 +108,11 @@
 					"pattern": "Create",
 					"name"	 : "Create",
 					"target" : ["Create"]
+				},
+        {
+					"pattern": "AllBuldingPermits",
+					"name"	 : "AllBuldingPermits",
+					"target" : ["AllBuldingPermits"]
 				}
 			],
 			"targets": {
@@ -121,6 +126,13 @@
         "Create": {
 					"viewType"		  : "XML",
 					"viewName"		  : "Create",
+					"viewLevel"		  : 1,
+					"transition"	  : "slide",
+					"clearAggregation": true
+				},
+        "AllBuldingPermits": {
+					"viewType"		  : "XML",
+					"viewName"		  : "AllBuldingPermits",
 					"viewLevel"		  : 1,
 					"transition"	  : "slide",
 					"clearAggregation": true
