@@ -5,18 +5,37 @@
     xmlns:tab1="BuildingPermits.view.SharedBlocks.tab1"
     xmlns:personal="BuildingPermits.view.SharedBlocks.personal" controllerName="BuildingPermits.controller.Detail" height="100%"
 		xmlns:core  ="sap.ui.core">
-    <m:VBox class="sapUiTinyMargin">
-        <m:HBox justifyContent="End" width="100%">
-            <m:Button visible="{= ${JSON>/layout} === 'OneColumn' }" press="onOpenDetailDetail" icon="sap-icon://nav-back"></m:Button>
+    <m:VBox class="backgroundWhite">
+        <m:HBox justifyContent="End" class="sapUiTinyMarginTopBottom" visible="{= ${JSON>/layout} === 'OneColumn' }">
+            <m:HBox class= "backgroundWhite closeButtonContainer" justifyContent="Center" alignItems="Center" width="3rem">
+                <core:Icon  src="sap-icon://nav-back" class="fontsize1_75" color="#3E5DE6" press="onOpenDetailDetail" width="10rem" />
+            </m:HBox>
         </m:HBox>
 
-        <ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="true" useIconTabBar="true" showTitleInHeaderContent="true" headerContentPinnable="false" showHeaderContent="false" upperCaseAnchorBar="false">
-            <!-- <headerTitle>
-                                 <ObjectPageDynamicHeaderTitle>
-                                 </ObjectPageDynamicHeaderTitle>
-                             </headerTitle> -->
+        <ObjectPageLayout id="ObjectPageLayout" class="ObjectPageLayout" enableLazyLoading="true" useIconTabBar="true"
+         showTitleInHeaderContent="false" headerContentPinnable="false" showHeaderContent="false" 
+         toggleHeaderOnTitleClick="false"
+         headerContentPinned="false"
+         upperCaseAnchorBar="false">
+            <headerTitle>
+                <ObjectPageDynamicHeaderTitle>
+                </ObjectPageDynamicHeaderTitle>
+            </headerTitle>
+    
+            <headerContent>
+               
+            </headerContent>
             <sections>
                 <ObjectPageSection title="Tab1">
+                    <subSections>
+                        <ObjectPageSubSection class="subSectionClass">
+                            <blocks>
+                                <tab1:GoalsBlock />
+                            </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+                <ObjectPageSection title="Tab2">
                     <subSections>
                         <ObjectPageSubSection class="subSectionClass">
                             <blocks>

@@ -7,7 +7,9 @@ sap.ui.define(
         "use strict";
 
         return Controller.extend("Detail.controller.MainView", {
-            onInit: function () {},
+            onInit: function () {
+               
+            },
             onCloseDetailDetail: function() {
                 this.getModel("JSON").setProperty("/layout","OneColumn");
             },

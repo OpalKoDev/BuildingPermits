@@ -1,15 +1,26 @@
-<mvc:View
-	controllerName="BuildingPermits.controller.Detail"
-	displayBlock="true"
-	height="100%"
+<mvc:View controllerName="BuildingPermits.controller.Detail" displayBlock="true" height="100%"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
-	 <!-- <Button> Close</Button> -->
-	 <Page showHeader="false" >
+	<!-- <Button> Close</Button> -->
+	<Page showHeader="false">
 		<VBox width="100%" class="backgroundWhite" height="100%">
-			<HBox justifyContent="End" width="100%">
-				<Button press="onCloseDetailDetail" icon="sap-icon://decline"></Button>
+			<HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMargin">
+				<Title wrapping="true" text="כותרת ראשית" titleStyle="H2" class="bold" />
+				<HBox  alignItems="Center" >
+					<ObjectStatus text="בסס- לטיפולך" active="true" inverted="true" state="None" />
+					<core:Icon src="sap-icon://decline" class="fontsize1_75" color="#3E5DE6" width="5rem" press="onCloseDetailDetail" />
+				</HBox>
+
 			</HBox>
+			<Panel expandable="true" headerText="{i18n>LOCATION_BUILDING_PERMIT}" width="auto" class="panel">
+				<content>
+					<HBox alignItems="Center" justifyContent="Center">
+						<Image src="../imgs/test.png" />
+					</HBox>
+				</content>
+			</Panel>
 		</VBox>
-	 </Page>
+
+	</Page>
 </mvc:View>

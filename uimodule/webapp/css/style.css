@@ -5,9 +5,83 @@
     border-radius: 15px;
     margin: 0.5rem;
 }
+
 .backgroundWhite {
     background-color: white;
 }
+
+.fontsize1_75 {
+    font-size: 1.75rem;
+}
+
+.closeButtonContainer {
+    /* padding-right: 1rem; */
+    border-radius: 0px 10px 10px 0px;
+}
+
+.ObjectPageLayout .sapUxAPObjectPageHeaderTitle {
+    display: none !important;
+}
+
+.ObjectPageLayout .sapFDynamicPageHeaderContent {
+    display: flex !important;
+    justify-content: end !important;
+    flex-shrink: 0 !important;
+    flex-grow: 1 !important;
+}
+
+.ObjectPageLayout .sapFDynamicPageHeader  {
+    height: 0rem !important;
+}
+.ObjectPageLayout .sapMBtnContent   {
+    font-size: 1rem !important;
+    color: #3E5DE6 !important;
+    font-weight: bold;
+}
+.ObjectPageLayout .sapUxAPAnchorBarButton {
+    color: white !important;
+} 
+
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after {
+    background-color: #111d4b !important;
+}
+
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after {
+    background-color: #111d4b !important;
+}
+.ObjectPageLayout .sapFDynamicPageHeaderContent  {
+    margin-top: 0.5rem;
+}
+.ObjectPageLayout .sapUxAPObjectPageNavigation {
+    height: 3.5rem;
+}
+
+.panel .sapMPanel .sapMPanelHeadingDiv>.sapMPanelHdr, .sapMPanelWrappingDiv, .sapMPanelWrappingDivTb  {
+    border-bottom: 0 !important;
+}
+.panel .sapUiIcon {
+    color: #3E5DE6;
+    font-weight: bold;
+}
+.panel .sapMPanelHdr{
+    font-weight: bold;
+}
+.bold{
+    font-weight: bold;
+}
+
+
+/* .ObjectPageLayout .sapUxAPAnchorBarButtonSelected {
+    background-color: #111d4b;
+    border-radius: 2rem;
+    color: white !important;
+} */
+ 
+
+ 
+ 
+
+
 /* .sapFFCLColumnSeparatorBegin{
     display: none !important;
 } */
