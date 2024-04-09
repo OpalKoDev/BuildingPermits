@@ -30,43 +30,54 @@
     flex-grow: 1 !important;
 }
 
-.ObjectPageLayout .sapFDynamicPageHeader  {
+.ObjectPageLayout .sapFDynamicPageHeader {
     height: 0rem !important;
 }
-.ObjectPageLayout .sapMBtnContent   {
+
+.ObjectPageLayout .sapMBtnContent {
     font-size: 1rem !important;
     color: #3E5DE6 !important;
     font-weight: bold;
 }
+
 .ObjectPageLayout .sapUxAPAnchorBarButton {
     color: white !important;
-} 
+}
 
-.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after {
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after,
+.sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after {
     background-color: #111d4b !important;
 }
 
-.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after {
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after,
+.sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after {
     background-color: #111d4b !important;
 }
-.ObjectPageLayout .sapFDynamicPageHeaderContent  {
+
+.ObjectPageLayout .sapFDynamicPageHeaderContent {
     margin-top: 0.5rem;
 }
+
 .ObjectPageLayout .sapUxAPObjectPageNavigation {
     height: 3.5rem;
 }
 
-.panel .sapMPanel .sapMPanelHeadingDiv>.sapMPanelHdr, .sapMPanelWrappingDiv, .sapMPanelWrappingDivTb  {
+.panel .sapMPanel .sapMPanelHeadingDiv>.sapMPanelHdr,
+.sapMPanelWrappingDiv,
+.sapMPanelWrappingDivTb {
     border-bottom: 0 !important;
 }
+
 .panel .sapUiIcon {
     color: #3E5DE6;
     font-weight: bold;
 }
-.panel .sapMPanelHdr{
+
+.panel .sapMPanelHdr {
     font-weight: bold;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
 
@@ -76,12 +87,141 @@
     border-radius: 2rem;
     color: white !important;
 } */
- 
 
- 
- 
+
+
+
 
 
 /* .sapFFCLColumnSeparatorBegin{
     display: none !important;
 } */
+
+
+
+
+
+/* CREATE */
+
+.wizardHeader {
+    font-family: Assistant;
+    font-weight: 700;
+    font-size: 28px !important;
+    color: rgb(17, 29, 75);
+    text-align: right;
+}
+
+.createWizard .sapMWizardProgressNavStepCircle {
+    background: rgb(17, 29, 75) !important;
+    color: white !important;
+}
+
+.createWizard .sapMWizardProgressNavStepTitle {
+    font-weight: 700;
+    font-size: 18px !important;
+    color: rgb(17, 29, 75);
+    text-align: right;
+}
+
+.createWizard .sapMWizardProgressNavStep[data-sap-ui-wpn-step-current="true"] .sapMWizardProgressNavStepCircle::after {
+    background: rgb(17, 29, 75) !important;
+}
+
+.footerCreate {
+    height: 3rem !important;
+    border-radius: 15px !important;
+    margin: 2rem 2rem !important;
+}
+
+.footerReject {
+    margin-right: 0.5rem !important;
+    height: 2.5rem !important;
+    align-items: center !important;
+}
+
+.footerReject .sapMBtnContent {
+    color: #BA5265 !important;
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+}
+
+.footerReject .sapMBtnInner {
+    border-radius: 2rem;
+}
+
+.footerReject .sapMBtnInner.sapMBtnText {
+    padding-right: 1.5em;
+    padding-left: 1.5em
+}
+
+/* .footerNext .sapMBtnInner.sapMBtnText{padding-right:1.5em;padding-left:1.5em}
+.footerNext .sapMBtnInner {
+    border-radius: 2rem;
+}
+.footerNext .sapMBtnContent {
+    color: white !important;
+    font-size: 1.3rem !important;
+    font-weight: bold   !important;
+} */
+.footerNext .sapMBtnInner {
+    border-radius: 50px;
+    color: white !important;
+    background-color: rgb(17, 29, 75) !important;
+    font-size: 1.2rem !important;
+    width: 6rem;
+    border: none;
+}
+
+.footerNext .sapMBtnInner,
+.footerNext .sapUiIcon {
+    border-radius: 50px;
+    border: none !important;
+    color: white !important;
+    background-color: none !important;
+    font-size: 1.2rem !important;
+    border: none;
+}
+
+.footerNext.sapMBtnDisabled .sapMBtnInner {
+    background-color: rgba(215, 215, 215, 1) !important;
+}
+
+.footerNext .sapMBtnInner {
+    border-radius: 50px;
+    color: white !important;
+    background-color: rgb(17, 29, 75) !important;
+    font-size: 1rem !important;
+}
+
+/* .footerPrev .sapMBtnInner.sapMBtnText {
+    padding-right: 1.5em;
+    padding-left: 1.5em
+}
+
+.footerPrev .sapMBtnContent {
+    color: #3E5DE6 !important;
+    font-size: 1.1rem !important;
+} */
+.footerPrev .sapMBtnInner,
+.footerPrev .sapUiIcon {
+    font-size: 1.2rem !important;
+    border-radius: 50px;
+    color: #3E5DE6;
+    background-color: white !important;
+    line-height: 1.8rem !important;
+    height: 2rem !important;
+}
+.footerPrev .sapMBtnInner {
+    font-size: 1.2rem !important;
+    border-radius: 50px;
+    color: #3E5DE6;
+    background-color: white !important;
+    line-height: 1.8rem !important;
+    height: 2rem !important;
+  }
+
+  .footerPrev .sapMBtnHoverable {
+    outline: none !important;
+    border: none !important;
+    
+  }

@@ -70,7 +70,15 @@
       "JSON":{
         "type": "sap.ui.model.json.JSONModel",
         "settings": {
-          "layout": "TwoColumnsBeginExpanded"
+          "layout": "TwoColumnsBeginExpanded",
+          "wizard": {
+            "step0": {
+              "accept": false
+            },
+            "step1": {
+              "accept": false
+            }
+          }
         },
         "preload": false
       }

@@ -1,0 +1,15 @@
+<core:FragmentDefinition 
+    xmlns	     ="sap.m"
+	xmlns:core  ="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Text class="sapUiSmallMarginBottom" text="We accept all major credit cards. No extra cost will be charged when paying with a credit card. Bank transfer and Cash on delivery are only possible for inland deliveries. A service charge of 2.99 EUR will be charged for these types of deliveries. Be aware, that for Bank transfers, the shipping will start on the day after the payment is received."/>
+    <HBox alignItems="Center" justifyContent="Center" width="100%">
+        <SegmentedButton selectionChange="setPaymentMethod" selectedKey="{/selectedPayment}">
+            <items>
+                <SegmentedButtonItem key="Credit Card" icon="sap-icon://credit-card" text="Credit card"/>
+                <SegmentedButtonItem key="Bank Transfer" icon="sap-icon://official-service" text="Bank transfer"/>
+                <SegmentedButtonItem key="Cash on Delivery" icon="sap-icon://money-bills" text="Cash on delivery"/>
+            </items>
+        </SegmentedButton>
+    </HBox>
+</core:FragmentDefinition>
