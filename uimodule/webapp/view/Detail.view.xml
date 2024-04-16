@@ -5,10 +5,13 @@
     xmlns:tab1="BuildingPermits.view.SharedBlocks.tab1"
     xmlns:personal="BuildingPermits.view.SharedBlocks.personal" controllerName="BuildingPermits.controller.Detail" height="100%"
 		xmlns:core  ="sap.ui.core">
-    <m:VBox class="backgroundWhite">
-        <m:HBox justifyContent="End" class="sapUiTinyMarginTopBottom" visible="{= ${JSON>/layout} === 'OneColumn' }">
-            <m:HBox class= "backgroundWhite closeButtonContainer" justifyContent="Center" alignItems="Center" width="3rem">
+    <m:VBox class="backgroundGray">
+        <m:HBox justifyContent="End" class="sapUiTinyMarginTopBottom" >
+            <m:HBox class= "backgroundWhite closeButtonContainer" justifyContent="Center" alignItems="Center" width="3rem"  visible="{= ${JSON>/layout} === 'OneColumn' }" >
                 <core:Icon  src="sap-icon://nav-back" class="fontsize1_75" color="#3E5DE6" press="onOpenDetailDetail" width="10rem" />
+            </m:HBox>
+            <m:HBox class= "closeButtonContainer" justifyContent="Center" alignItems="Center"   visible="{= ${JSON>/layout} !== 'OneColumn' }" >
+                <core:Icon  src="sap-icon://nav-back" class="fontsize1_75 outlineNone" color="#f7f7f7" press="onOpenDetailDetail"   />
             </m:HBox>
         </m:HBox>
 

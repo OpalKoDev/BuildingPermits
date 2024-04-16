@@ -47,11 +47,18 @@
 .ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after,
 .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent::after {
     background-color: #111d4b !important;
+    display: none !important;
 }
 
 .ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after,
 .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent::after {
     background-color: #111d4b !important;
+    display: none !important;
+}
+.ObjectPageLayout .sapUxAPAnchorBarButtonSelected {
+    background-color: #111d4b !important;
+    border-radius: 2rem !important;
+    color: white !important;
 }
 
 .ObjectPageLayout .sapFDynamicPageHeaderContent {
@@ -60,6 +67,7 @@
 
 .ObjectPageLayout .sapUxAPObjectPageNavigation {
     height: 3.5rem;
+    background-color: #f7f7f7 !important;
 }
 
 .panel .sapMPanel .sapMPanelHeadingDiv>.sapMPanelHdr,
@@ -68,6 +76,32 @@
     border-bottom: 0 !important;
 }
 
+.ObjectPageLayout .sapMIBar {
+    background-color: #f7f7f7 !important;
+}
+
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent,
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapMBtnContent, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapMBtnContent, .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapUiIcon, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent
+{
+            
+    color: white !important;
+}
+
+.ObjectPageLayout .sapUxAPAnchorBarButtonSelected{
+    color: white !important;
+}
+
+/* .sapUxAPAnchorBarButtonSelected:hover {
+    color: white !important;
+} */
+
+
+ 
+
+
+.backgroundGray {
+    background-color: #f7f7f7 !important
+}
 .panel .sapUiIcon {
     color: #3E5DE6;
     font-weight: bold;
@@ -81,25 +115,14 @@
     font-weight: bold;
 }
 
-
-/* .ObjectPageLayout .sapUxAPAnchorBarButtonSelected {
-    background-color: #111d4b;
-    border-radius: 2rem;
-    color: white !important;
-} */
-
-
-
-
+.outlineNone {
+    outline: none !important;
+}
 
 
 /* .sapFFCLColumnSeparatorBegin{
     display: none !important;
 } */
-
-
-
-
 
 /* CREATE */
 
