@@ -23,7 +23,7 @@ sap.ui.define(
                     oDataModel
                         .metadataLoaded()
                         .then(() => {
-                            oData
+                            oDataModel
                                 .read(entity, {
                                     filters: filter || [],
                                     success: (data) => {

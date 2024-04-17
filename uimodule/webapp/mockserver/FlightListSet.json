@@ -1,0 +1,43 @@
+{
+    "d": {
+        "__count": "1",
+        "results": [
+            {
+                "zzoren": "A",
+                "Airlineid": "AA",
+                "ZzmyField": "dummyRangeCode1",
+                "Airline": "American Airlines",
+                "Connectid": "1234",
+                "Flightdate": "2024-04-17T08:00:00.000Z",
+                "Airportfr": "JFK",
+                "Cityfrom": "New York",
+                "Airportto": "LAX",
+                "Cityto": "Los Angeles",
+                "Arrdate": "2024-04-17T12:00:00.000Z",
+                "Price": 500.00,
+                "Deptime": "PT08H00M00S",
+                "Arrtime": "PT12H00M00S",
+                "Curr": "USD",
+                "CurrIso": "USD"
+            },
+            {
+                "zzoren": "B",
+                "Airlineid": "DL",
+                "ZzmyField": "dummyRangeCode2",
+                "Airline": "Delta Airlines",
+                "Connectid": "5678",
+                "Deptime": "PT08H00M00S",
+                "Arrtime": "PT12H00M00S",
+                "Flightdate": "2024-04-18T10:00:00.000Z",
+                "Airportfr": "ATL",
+                "Cityfrom": "Atlanta",
+                "Airportto": "SFO",
+                "Cityto": "San Francisco",
+                "Arrdate": "2024-04-18T14:00:00.000Z",
+                "Price": 600.00,
+                "Curr": "USD",
+                "CurrIso": "USD"
+            }
+        ]
+    }
+}

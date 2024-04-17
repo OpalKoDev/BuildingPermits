@@ -84,9 +84,9 @@
 					</layoutData>
 				</SmartFilterBar> -->
 				<SmartFilterBar id="smartFilterBar" showClearOnFB="true" showClearButton="true" clear="onClearFilters"
-				entitySet="LineItemsSet" persistencyKey="PageVariantPKey"  
+				entitySet="FlightListSet" persistencyKey="PageVariantPKey"  
 				 search="onFiltersearch" beforeVariantFetch=".variantSave" afterVariantLoad="variantLoad" >
-					<controlConfiguration>
+					<!-- <controlConfiguration>
 						<ControlConfiguration key="Bukrs">
 							<defaultFilterValues>
 								<SelectOption low="0001">
@@ -99,14 +99,14 @@
 								</SelectOption>
 							</defaultFilterValues>
 						</ControlConfiguration>
-					</controlConfiguration>
+					</controlConfiguration> -->
 				</SmartFilterBar>
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
 			<st:SmartTable header="{i18n>LIST_PROJECT} ({oViewModel>/iCounterProj})"
 				width=""
-				entitySet="LineItemsSet" 
+				entitySet="FlightListSet" 
 				class=""
 				editable="false"
 				editTogglable="false"
