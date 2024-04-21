@@ -3,7 +3,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
 
     return BaseController.extend("BuildingPermits.controller.Create", {
         onInit() {
-
             this._oWizard = this.byId("wizard");
 			this._iSelectedStepIndex = 0;
 			this._oSelectedStep = this._oWizard.getSteps()[this._iSelectedStepIndex];

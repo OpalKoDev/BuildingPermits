@@ -93,6 +93,7 @@
     "rootView": {
       "viewName": "BuildingPermits.view.App",
       "type": "XML",
+      "async": true,
       "id": "App"
     },
     "routing": {
@@ -101,6 +102,7 @@
 				"viewType"			: "XML",
 				"viewPath"			: "BuildingPermits.view",
 				"controlId"		    : "App",
+        "clearControlAggregation": false,
 				"controlAggregation": "pages",
 				"async"				: true,
 				"bypassed"			: {
@@ -130,21 +132,21 @@
 					"viewName"		  : "Main",
 					"viewLevel"		  : 1,
 					"transition"	  : "slide",
-					"clearAggregation": true
+					"clearAggregation": false
 				},
         "Create": {
 					"viewType"		  : "XML",
 					"viewName"		  : "Create",
 					"viewLevel"		  : 1,
 					"transition"	  : "slide",
-					"clearAggregation": true
+					"clearAggregation": false
 				},
         "AllBuldingPermits": {
 					"viewType"		  : "XML",
 					"viewName"		  : "AllBuldingPermits",
 					"viewLevel"		  : 1,
 					"transition"	  : "slide",
-					"clearAggregation": true
+					"clearAggregation": false
 				}
 			}
 		}

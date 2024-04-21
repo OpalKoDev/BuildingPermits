@@ -1,21 +1,13 @@
 sap.ui.define(
-    ["./BaseController", '../model/models'],
+    ["./BaseController"],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, models) {
+    function (Controller) {
         "use strict";
 
-        return Controller.extend("Detail.controller.MainView", {
-            onInit: function () {
-                const oRouter = this.getOwnerComponent().getRouter();
-                oRouter.attachRouteMatched(this.onRouteMatched, this);
-                
-            },
-            onRouteMatched: function(oEvent) {
-                debugger;
-                models.getData(this.getOwnerComponent(), "/FlightListSet");
-            },
+        return Controller.extend("BuildingPermits.controller.Detail", {
+            
             onCloseDetailDetail: function () {
                 this.getModel("JSON").setProperty("/layout", "OneColumn");
             },
