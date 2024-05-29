@@ -1,15 +1,31 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
-    "use strict";
+sap.ui.define(["sap/ui/core/mvc/Controller", 'sap/m/Token', "sap/ui/core/CustomData"], function (BaseController, Token, CustomData) {
+	"use strict";
 
-    return BaseController.extend("BuildingPermits.controller.Create", {
-        onInit() {
-            this._oWizard = this.byId("wizard");
+	return BaseController.extend("BuildingPermits.controller.Create", {
+		onInit() {
+			this._oWizard = this.byId("wizard");
 			this._iSelectedStepIndex = 0;
 			this._oSelectedStep = this._oWizard.getSteps()[this._iSelectedStepIndex];
-            this.handleButtonsVisibility();
-        },
+			this.handleButtonsVisibility();
+			// this.onNextWizard();
 
-        onNextWizard() {
+
+			// var oMultiInput1 = this.byId("multiInput1");
+			// oMultiInput1.setTokens([
+			// 	new Token({
+			// 		text: "Token 1",
+			// 		customData: [new CustomData({key: "color", value: "red"})]
+			// 	}),
+			// 	new Token({
+			// 		text: "Token 2",
+			// 		customData: [new CustomData({key: "color", value: "orange"})]
+			// 	})
+			// ]);
+
+
+		},
+
+		onNextWizard() {
 			this._iSelectedStepIndex = this._oWizard.getSteps().indexOf(this._oSelectedStep);
 			const oNextStep = this._oWizard.getSteps()[this._iSelectedStepIndex + 1];
 
@@ -19,13 +35,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
 				this._oWizard.nextStep();
 			}
 
-			this.getOwnerComponent().getModel("JSON").setProperty("/wizard/step" + this._iSelectedStepIndex +"/accept", true);
-			
+			this.getOwnerComponent().getModel("JSON").setProperty("/wizard/step" + this._iSelectedStepIndex + "/accept", true);
+
 			this._iSelectedStepIndex++;
 			this._oSelectedStep = oNextStep;
 
 			this.handleButtonsVisibility();
-        },
+		},
 		onPrevWizard: function () {
 			this._iSelectedStepIndex = this._oWizard.getSteps().indexOf(this._oSelectedStep);
 			const oPreviousStep = this._oWizard.getSteps()[this._iSelectedStepIndex - 1];
@@ -46,9 +62,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
 			this._iSelectedStepIndex = this._oWizard.getSteps().indexOf(this._oSelectedStep);
 			this.handleButtonsVisibility();
 		},
-        handleButtonsVisibility: function () {
+		handleButtonsVisibility: function () {
 			const oModel = this.getOwnerComponent().getModel("JSON");
-			switch (this._iSelectedStepIndex){
+			switch (this._iSelectedStepIndex) {
 				case 0:
 					oModel.setProperty("/nextButtonVisible", true);
 					oModel.setProperty("/nextButtonEnabled", true);
@@ -57,6 +73,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
 					oModel.setProperty("/finishButtonVisible", false);
 					break;
 				case 1:
+					oModel.setProperty("/nextButtonVisible", true);
+					oModel.setProperty("/finishButtonVisible", false);
+					oModel.setProperty("/backButtonVisible", true);
+					// oModel.setProperty("/reviewButtonVisible", true);
+					break;
+				case 2:
 					oModel.setProperty("/nextButtonVisible", false);
 					oModel.setProperty("/finishButtonVisible", true);
 					oModel.setProperty("/backButtonVisible", true);
@@ -64,7 +86,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
 					break;
 				default: break;
 			}
-			
+
 		},
-    });
+		onCloseDetailDetailCreate: function () {
+			this.getView().getModel("JSON").setProperty("/layoutCreate", "OneColumn");
+		},
+		onOpenDetailDetailCreate: function () {
+			this.getView().getModel("JSON").setProperty("/layoutCreate", "TwoColumnsBeginExpanded");
+		},
+	});
 });

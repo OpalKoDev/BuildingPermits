@@ -55,6 +55,7 @@
     background-color: #111d4b !important;
     display: none !important;
 }
+
 .ObjectPageLayout .sapUxAPAnchorBarButtonSelected {
     background-color: #111d4b !important;
     border-radius: 2rem !important;
@@ -80,14 +81,17 @@
     background-color: #f7f7f7 !important;
 }
 
-.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent,
-.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapMBtnContent, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapMBtnContent, .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapUiIcon, .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent
-{
-            
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent,
+.sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnDefault .sapMBtnContent,
+.ObjectPageLayout .sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapMBtnContent,
+.sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapMBtnContent,
+.sapUiSizeCompact .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent .sapUiIcon,
+.sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMSB.sapMSBTransparent {
+
     color: white !important;
 }
 
-.ObjectPageLayout .sapUxAPAnchorBarButtonSelected{
+.ObjectPageLayout .sapUxAPAnchorBarButtonSelected {
     color: white !important;
 }
 
@@ -96,12 +100,13 @@
 } */
 
 
- 
+
 
 
 .backgroundGray {
     background-color: #f7f7f7 !important
 }
+
 .panel .sapUiIcon {
     color: #3E5DE6;
     font-weight: bold;
@@ -189,7 +194,7 @@
 .footerNext .sapMBtnInner {
     border-radius: 50px;
     color: white !important;
-    background-color: rgb(17, 29, 75) !important;
+    background-color: rgb(62, 93, 230) !important;
     font-size: 1.2rem !important;
     width: 6rem;
     border: none;
@@ -206,13 +211,13 @@
 }
 
 .footerNext.sapMBtnDisabled .sapMBtnInner {
-    background-color: rgba(215, 215, 215, 1) !important;
+    background-color: rgb(62, 93, 230) !important;
 }
 
 .footerNext .sapMBtnInner {
     border-radius: 50px;
     color: white !important;
-    background-color: rgb(17, 29, 75) !important;
+    background-color: rgb(62, 93, 230) !important;
     font-size: 1rem !important;
 }
 
@@ -234,6 +239,7 @@
     line-height: 1.8rem !important;
     height: 2rem !important;
 }
+
 .footerPrev .sapMBtnInner {
     font-size: 1.2rem !important;
     border-radius: 50px;
@@ -241,10 +247,171 @@
     background-color: white !important;
     line-height: 1.8rem !important;
     height: 2rem !important;
-  }
+}
 
-  .footerPrev .sapMBtnHoverable {
+.footerPrev .sapMBtnHoverable {
     outline: none !important;
     border: none !important;
+
+}
+
+.hr-style {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    margin: 10px 0;
+    /* Adjust margin as needed */
+}
+
+.vertical-line {
+    border-left: 1px solid gray;
+    height: 100%;
+    /* Adjust as needed */
+    margin: 10px 0;
+}
+
+.fontBlack {
+    color: black;
+}
+
+.inputStyle .sapMInputBaseContentWrapper {
+    border-radius: 0.5rem !important;
+    border-color: rgba(62, 93, 230, 1);
+    height: 2rem;
+}
+/* .selectStyle .sapMSltDefault    {
+    border-radius: 0.5rem !important;
+    border-color: rgba(62, 93, 230, 1);
+    height: 2rem;
+} */
+.selectStyle {
+    height: 2rem !important; 
+    border-radius: 0.5rem !important;
+    border-color: rgba(62, 93, 230, 1);
+}
+
+/* Override UI5 styles */
+.selectStyle .sapMSlt {
+    border-radius: inherit;
+}
+
+
+.CreatePage .sapMWizardStepContainer,
+.CreatePage .sapFDynamicPageContent {
+    background-color: white !important;
+}
+
+.subjPlanBox {
+    margin-top: 1rem;
+    border: 0.1em solid rgba(62, 93, 230, 1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.flex1 {
+    flex: 1 !important;
+}
+
+.inputPlaceHolderBorder .sapMInputBaseContentWrapper {
+    border: none !important;
+    border-bottom: 0.1em solid rgba(62, 93, 230, 1) !important;
+}
+
+.box {
+    width: 180px;
+    padding: 20px;
+    height: 100px;
+    background-color: rgba(244, 246, 252, 1);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.bigBox {
+    width: 540px;
+    padding: 20px;
+    height: 100px;
+    background-color: rgba(244, 246, 252, 1);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    /* justify-content: center; */
+}
+.midBox {
+    width: 300px;
+    padding: 10px;
+    height: 100px;
+    background-color: rgba(244, 246, 252, 1);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.textBox {
+    font-weight: 700;
+    font-size: 12px;
+    color: rgb(17, 29, 75);
+    text-align: right;
+}
+
+.noWrap {
+    text-wrap: nowrap;
+}
+
+.Smallbox {
+    width: 160px;
+    padding: 20px;
+    height: 100px;
+    background-color: rgba(244, 246, 252, 1);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.backgroundGreen {
+    background-color: rgba(227, 244, 230, 1) !important;
+}
+
+.customSwitch .sapMSwt {
+    width: 200px;
+}
+
+.customSwitch .sapMSwtOn div.sapMSwtHandle {
+    left: 170px;
+}
+
+.inputStyleTable , 
+.inputStyleTable .sapMInputBaseContentWrapper  {
+    border-radius: 0.5rem !important;
+    border-color: rgba(62, 93, 230, 1);
+    /* height: 2rem; */
+}
+
+
+
+.customCheckBox .sapMCb {
+    border: 2px solid rgba(62, 93, 230, 1)lue !important; /* Set the border color and width */
+    border-radius: 4px !important; /* Optional: set border radius */
+}
+
+.customCheckBox .sapMCbHover {
+    border-color: rgba(62, 93, 230, 1) !important; /* Change border color on hover */
+}
+
+.customTable .sapUiTableHeaderCell {
+    background-color: rgba(244, 246, 252, 1);
+}
+
+.customRedTable .sapUiTableHeaderCell {
+    background-color: rgba(248,238,240,255)
+}
+
+
+.inputStyle[data-color="red"] {
+	background-color: red;
+}
+
+.buttonHeader {
     
-  }
+}

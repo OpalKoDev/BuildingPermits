@@ -2,14 +2,48 @@
     xmlns	     ="sap.m"
 	xmlns:core  ="sap.ui.core"
     xmlns:l="sap.ui.layout">
-    <Text class="sapUiSmallMarginBottom" text="We accept all major credit cards. No extra cost will be charged when paying with a credit card. Bank transfer and Cash on delivery are only possible for inland deliveries. A service charge of 2.99 EUR will be charged for these types of deliveries. Be aware, that for Bank transfers, the shipping will start on the day after the payment is received."/>
-    <HBox alignItems="Center" justifyContent="Center" width="100%">
-        <SegmentedButton selectionChange="setPaymentMethod" selectedKey="{/selectedPayment}">
-            <items>
-                <SegmentedButtonItem key="Credit Card" icon="sap-icon://credit-card" text="Credit card"/>
-                <SegmentedButtonItem key="Bank Transfer" icon="sap-icon://official-service" text="Bank transfer"/>
-                <SegmentedButtonItem key="Cash on Delivery" icon="sap-icon://money-bills" text="Cash on delivery"/>
-            </items>
-        </SegmentedButton>
-    </HBox>F
+    <l:VerticalLayout width="100%" class="gridWrapper">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>REQ_TO_MARK_INFRA}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>ADUJ_SURF_COMP}" design="Bold" />
+                <Switch state="false" customTextOn="{i18n>YES}" customTextOff="{i18n>NO}">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack " text="{i18n>INFRA_MARK_CHANNEL}" design="Bold" />
+                <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput>
+                <!-- <smartMultiInput:SmartMultiInput id="idSmartMultiInput1" value="{Price}" entitySet="FlightList" /> -->
+
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>REQ_TO_CHANGE_INFRA_CHAN}" design="Bold" />
+                <Switch state="false" customTextOn="{i18n>REQUIRED}" customTextOff="{i18n>NO_CHANGE}" class="customSwitch">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+                <layoutData>
+                    <l:GridData span="L4 M4 S6"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+
 </core:FragmentDefinition>

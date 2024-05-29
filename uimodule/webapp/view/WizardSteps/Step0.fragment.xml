@@ -1,0 +1,226 @@
+<core:FragmentDefinition 
+    xmlns	     ="sap.m"
+	xmlns:core  ="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:smartMultiInput="sap.ui.comp.smartmultiinput"
+    xmlns:l="sap.ui.layout">
+    <l:VerticalLayout width="100%" class="gridWrapper">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>REAL_ESTITAE}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack " text="{i18n>M.K}" design="Bold" />
+                <MultiInput class="inputStyle" id="multiInput1">
+                    <tokens>
+                        <Token class="tokenBackGround" text="{text}">
+                            <customData>
+                                <core:CustomData key="{color}" value="red" writeToDom="true" />
+                            </customData>
+                        </Token>
+                    </tokens>
+                </MultiInput>
+
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>CONSTRUCTION_SPACE}" design="Bold" />
+                <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>BULING_PERMIT_TYPE}" design="Bold" />
+                <!-- <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput> -->
+                <Select width="100%" class="selectStyle"/>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>PROCESS_IN_AUTHORITY}" design="Bold" />
+                <Input class="inputStyle" enabled="false"/>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>EDIT_REQUEST}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>EDIT_REQUEST}" design="Bold" />
+                <Input class="inputStyle" enabled="false"/>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>EDIT_REQUEST_PHONE}" design="Bold" />
+                <Input class="inputStyle" enabled="false"/>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>REALIZING_FRAMEWORK}" design="Bold" />
+                <Input class="inputStyle" enabled="false"/>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+
+        </l:Grid>
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>THE_PROJECT_AND_REQUEST_EDITOR}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>PROJECT_LVL_2}" design="Bold">
+                    <layoutData>
+                        <l:GridData span="L2 M2 S6"/>
+                    </layoutData>
+                </Label>
+                <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>INCHARGE}" design="Bold" />
+                <Input class="inputStyle" />
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>UNIT_MISSION}" design="Bold" />
+                <Select width="100%" class="selectStyle"/>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>USE_FACILITY_BY_EXTERNAL_FACTOR}" design="Bold" />
+                <Switch state="false" customTextOn="{i18n>YES}" customTextOff="{i18n>NO}">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>INCHARGE}" design="Bold" />
+                <Switch state="false" customTextOn="{i18n>YES}" customTextOff="{i18n>NO}">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>PROJECT_MANAGER}" design="Bold">
+                    <layoutData>
+                        <l:GridData span="L2 M2 S6"/>
+                    </layoutData>
+                </Label>
+                <Input class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </Input>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>PROJECT_MANAGER_PHONE}" design="Bold" />
+                <Input class="inputStyle" enabled="false"/>
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>SUMMARY_OF_REQUEST}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox class="subjPlanBox">
+                <HBox alignItems="Center" width="100%" renderType="Bare">
+                    <Text text="{i18n>IN_THIS_PROJECT_WILL_CREATE}" />
+                    <Input placeholder="{i18n>IN_THIS_PROJECT_WILL_CREATE_PLACEHOLDER}" class="flex1 sapUiTinyMarginBegin inputPlaceHolderBorder" />
+                </HBox>
+                <HBox alignItems="Center">
+                    <Text text="{i18n>B}" />
+                    <Input class="sapUiTinyMarginBegin inputPlaceHolderBorder" placeholder="{i18n>DESC_PROP}" width="10rem" />
+                    <HBox alignItems="Center" width="100%" renderType="Bare">
+                        <Text text="{i18n>IN_PROJECT}" class="sapUiSmallMarginBegin" />
+                        <Input class="flex1 sapUiTinyMarginBegin inputPlaceHolderBorder" placeholder="{i18n>DESC_PROJ}" />
+                    </HBox>
+                </HBox>
+                <layoutData>
+                    <l:GridData span="L6 M6 S12"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+</core:FragmentDefinition>

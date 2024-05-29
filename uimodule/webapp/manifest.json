@@ -71,6 +71,8 @@
         "type": "sap.ui.model.json.JSONModel",
         "settings": {
           "layout": "TwoColumnsBeginExpanded",
+          "layoutCreate": "TwoColumnsBeginExpanded",
+          "offersDemo": [{}],
           "wizard": {
             "step0": {
               "accept": false

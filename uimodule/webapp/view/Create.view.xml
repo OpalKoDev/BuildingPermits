@@ -1,65 +1,59 @@
-<mvc:View
-	controllerName="BuildingPermits.controller.Create"
+<mvc:View controllerName="BuildingPermits.controller.Create"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.m"
 	xmlns:f="sap.f"
 	xmlns:form="sap.ui.layout.form"
-	xmlns:layout="sap.ui.layout"
-	height="100%">
+	xmlns:layout="sap.ui.layout" height="100%">
+	<!-- <core:Icon src="sap-icon://nav-back" class="fontsize1_75" color="#3E5DE6" press="onOpenDetailDetailCreate" width="10rem" visible="{= ${JSON>/layoutCreate} === 'OneColumn' }" /> -->
 	<NavContainer id="navContainer">
-		<pages>
-			<f:DynamicPage
-				class="sapUiNoContentPadding createFooter"
-				id="CreatePage"
-				showFooter="true">
-				<!-- DynamicPage Title -->
-				<f:title>
-					<f:DynamicPageTitle>
-						<f:heading>
-							<Title  text="{i18n>CREATE_NEW_BULING_PERMIT}" class="wizardHeader"/>
-						</f:heading>
-					</f:DynamicPageTitle>
-				</f:title>
-				<!-- DynamicPage Header -->
-				<f:content>
-					<Wizard 
-							showNextButton="false"
-							id="wizard"
-							renderMode="Page"
-							navigationChange="handleNavigationChange"
-					        class="sapUiResponsivePadding--header sapUiResponsivePadding--content createWizard"
-					        complete="completedHandler"
-					        height="auto"
-					        enableBranching="true">
-						<WizardStep
-							id="step0"
-							nextStep="step1"
-							title="step 0"
-							icon="{= ${JSON>/wizard/step0/accept} ? 'sap-icon://accept' : 'sap-icon://account' }">
-							<core:Fragment fragmentName="BuildingPermits.view.WizardSteps.Step1" type="XML" />
-						</WizardStep>
-						<WizardStep
-							id="step1"
-							title="step 1"
-							icon="{= ${JSON>/wizard/step1/accept} ? 'sap-icon://accept' : 'sap-icon://account' }">
-							
-						</WizardStep>
-						
-					</Wizard>
-				</f:content>
-				<!-- DynamicPage Footer -->
-				<f:footer>
-					<OverflowToolbar  class="footerCreate">
-						<Button type="Reject" text="{i18n>CANCEL}" class="footerReject"/>
-						<ToolbarSpacer/>
-						<Button  text="{i18n>PREV}" visible="{JSON>/backButtonVisible}" class="footerPrev"  press="onPrevWizard" />
-						<Button  text="{i18n>NEXT}" type="Emphasized" class="footerNext"  press="onNextWizard" enabled="{JSON>/nextButtonEnabled}" visible="{JSON>/nextButtonVisible}"/>
-						<Button type="Emphasized" text="{i18n>FINISH}" class="footerNext" visible="{JSON>/finishButtonVisible}"/>
-					</OverflowToolbar>
-				</f:footer>
-			</f:DynamicPage>
-			<core:Fragment fragmentName="BuildingPermits.view.WizardSteps.ReviewWizard" type="XML" />
-		</pages>
+		<f:FlexibleColumnLayout layout="{JSON>/layoutCreate}" id="flexibleColumnLayoutCreate" backgroundDesign="Solid">
+			<f:beginColumnPages>
+				<f:DynamicPage class="sapUiNoContentPadding CreatePage" id="CreatePage" showFooter="true">
+					<f:title>
+						<!-- <f:DynamicPageTitle>
+							<f:heading>
+								<Title text="{i18n>CREATE_NEW_BULING_PERMIT}" class="wizardHeader"/>
+							</f:heading>
+							<f:navigationActions>
+								
+								<Button icon="sap-icon://nav-back" class="fontsize1_75"  press="onOpenDetailDetailCreate" width="10rem" visible="{= ${JSON>/layoutCreate} === 'OneColumn' }" />
+							</f:navigationActions>
+							<f:actions>
+								
+							</f:actions>
+						</f:DynamicPageTitle> -->
+					</f:title>
+					<f:content>
+						<Wizard showNextButton="false" id="wizard" renderMode="Page" navigationChange="handleNavigationChange" class="sapUiResponsivePadding--header sapUiResponsivePadding--content createWizard" complete="completedHandler" height="auto" enableBranching="true">
+							<WizardStep id="step0" nextStep="step1" title="{i18n>STEP0}" icon="{= ${JSON>/wizard/step0/accept} ? 'sap-icon://accept' : 'sap-icon://account' }">
+								<core:Fragment fragmentName="BuildingPermits.view.WizardSteps.Step0" type="XML" />
+							</WizardStep>
+							<WizardStep id="step1" nextStep="step2" title="{i18n>STEP1}" icon="{= ${JSON>/wizard/step1/accept} ? 'sap-icon://accept' : 'sap-icon://account' }">
+								<core:Fragment fragmentName="BuildingPermits.view.WizardSteps.Step1" type="XML" />
+							</WizardStep>
+							<WizardStep id="step2" title="{i18n>STEP2}" icon="{= ${JSON>/wizard/step2/accept} ? 'sap-icon://accept' : 'sap-icon://account' }">
+								<core:Fragment fragmentName="BuildingPermits.view.WizardSteps.Step2" type="XML" />
+							</WizardStep>
+
+						</Wizard>
+					</f:content>
+					<f:footer>
+						<OverflowToolbar class="footerCreate">
+							<Button type="Reject" text="{i18n>CANCEL}" class="footerReject"/>
+							<ToolbarSpacer/>
+							<Button text="{i18n>PREV}" visible="{JSON>/backButtonVisible}" class="footerPrev" press="onPrevWizard" />
+							<Button text="{i18n>NEXT}" type="Emphasized" class="footerNext" press="onNextWizard" enabled="{JSON>/nextButtonEnabled}" visible="{JSON>/nextButtonVisible}"/>
+							<Button type="Emphasized" text="{i18n>FINISH}" class="footerNext" visible="{JSON>/finishButtonVisible}"/>
+						</OverflowToolbar>
+					</f:footer>
+				</f:DynamicPage>
+				<core:Fragment fragmentName="BuildingPermits.view.WizardSteps.ReviewWizard" type="XML" />
+			</f:beginColumnPages>
+			<f:midColumnPages>
+				<core:Fragment fragmentName="BuildingPermits.view.DetaildetailCreate" type="XML" />
+			</f:midColumnPages>
+		</f:FlexibleColumnLayout>
+
 	</NavContainer>
 </mvc:View>

@@ -1,15 +1,670 @@
 <core:FragmentDefinition 
     xmlns	     ="sap.m"
 	xmlns:core  ="sap.ui.core"
+    xmlns:table="sap.ui.table"
+    xmlns:sap.ui.fl="sap.ui.fl"
     xmlns:l="sap.ui.layout">
-    <Text class="sapUiSmallMarginBottom" text="We accept all major credit cards. No extra cost will be charged when paying with a credit card. Bank transfer and Cash on delivery are only possible for inland deliveries. A service charge of 2.99 EUR will be charged for these types of deliveries. Be aware, that for Bank transfers, the shipping will start on the day after the payment is received."/>
-    <HBox alignItems="Center" justifyContent="Center" width="100%">
-        <SegmentedButton selectionChange="setPaymentMethod" selectedKey="{/selectedPayment}">
-            <items>
-                <SegmentedButtonItem key="Credit Card" icon="sap-icon://credit-card" text="Credit card"/>
-                <SegmentedButtonItem key="Bank Transfer" icon="sap-icon://official-service" text="Bank transfer"/>
-                <SegmentedButtonItem key="Cash on Delivery" icon="sap-icon://money-bills" text="Cash on delivery"/>
-            </items>
-        </SegmentedButton>
-    </HBox>
+    <l:VerticalLayout width="100%" class="gridWrapper">
+        <Label class="fontBlack" text="{i18n>STATUS_CONST_RIGHT}" design="Bold">
+            <layoutData>
+                <l:GridData span="L2 M2 S6"/>
+            </layoutData>
+        </Label>
+        <HBox  class="sapUiSmallMarginTop">
+            <VBox class="box">
+                <Title class="fontBlack Bold fontsize1_75" text="32412" level="H1" />
+                <Text text="{i18n>TOTAL_ORG_BUILD_RIGHT}" class="textBox noWrap" />
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M4 S6"/>
+                    </layoutData>
+            </VBox>
+            <HBox class="bigBox sapUiMediumMarginBegin" >
+                <layoutData>
+                    <l:GridData span="XL6 L6 M4 S6"/>
+                </layoutData>
+                <VBox>
+                    <Title class="fontBlack Bold fontsize1_75" text="921" level="H1" />
+                    <Text text="{i18n>EXIST_OFFERS_RM}" class="textBox noWrap" />
+                    <Text text="18 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+                <HBox class="vertical-line sapUiSmallMarginBeginEnd " />
+                <VBox>
+                    <Title class="fontBlack Bold fontsize1_75" text="1" level="H1" />
+                    <Text text="{i18n>OFFERS_CONST}" class="textBox noWrap" />
+                    <Text text="1 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+                <VBox class="sapUiSmallMarginBeginEnd">
+                    <Title class="fontBlack Bold fontsize1_75" text="0" level="H1" />
+                    <Text text="{i18n>ADDITION_FROM_CHANGE}" class="textBox noWrap" />
+                    <Text text="18 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+                <VBox>
+                    <Title class="fontBlack Bold fontsize1_75" text="2" level="H1" />
+                    <Text text="{i18n>ADDITION_FROM_DEMO}" class="textBox noWrap" />
+                    <Text text="18 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+            </HBox>
+            <HBox>
+                <VBox class="Smallbox sapUiMediumMarginBegin">
+                    <Title class="fontBlack Bold fontsize1_75" text="18" level="H1" />
+                    <Text text="{i18n>SUP_SDC}" class="textBox noWrap" />
+                </VBox>
+                <HBox class="midBox backgroundGreen sapUiSmallMarginBegin" justifyContent="Center">
+                    <VBox>
+                        <Title class="fontBlack Bold fontsize1_75" text="330" level="H1" />
+                        <Text text="{i18n>TOTAL_RIGHT_BUILDING}" class="textBox noWrap" />
+                    </VBox>
+                    <HBox class="vertical-line sapUiSmallMarginBeginEnd " />
+                    <VBox>
+                        <Text text="{i18n>TOTAL_OFFERSS}" class="textBox noWrap" />
+                        <Text text="18" class="noWrap" />
+                        <Text text="{i18n>MAX_HEIGHT}" class="textBox noWrap" />
+                        <Text text="182 " class="noWrap" />
+                    </VBox>
+                </HBox>
+            </HBox>
+            
+        </HBox>
+        <!-- <l:Grid containerQuery="true" hSpacing="0" defaultSpan="XL4 L4 M12 S12" class="sapUiSmallMarginTop">
+            <VBox class="box">
+                <Title class="fontBlack Bold fontsize1_75" text="32412" level="H1" />
+                <Text text="{i18n>TOTAL_ORG_BUILD_RIGHT}" class="textBox noWrap" />
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M4 S6"/>
+                    </layoutData>
+            </VBox>
+            <HBox class="bigBox">
+                <layoutData>
+                    <l:GridData span="XL6 L6 M4 S6"/>
+                </layoutData>
+                <VBox>
+                    <Title class="fontBlack Bold fontsize1_75" text="921" level="H1" />
+                    <Text text="{i18n>EXIST_OFFERS_RM}" class="textBox noWrap" />
+                    <Text text="18 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+                <HBox class="vertical-line sapUiSmallMarginBeginEnd " />
+                <VBox>
+                    <Title class="fontBlack Bold fontsize1_75" text="1" level="H1" />
+                    <Text text="{i18n>OFFERS_CONST}" class="textBox noWrap" />
+                    <Text text="1 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+                <VBox class="sapUiSmallMarginBeginEnd">
+                    <Title class="fontBlack Bold fontsize1_75" text="0" level="H1" />
+                    <Text text="{i18n>ADDITION_FROM_CHANGE}" class="textBox noWrap" />
+                    <Text text="18 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+                <VBox>
+                    <Title class="fontBlack Bold fontsize1_75" text="2" level="H1" />
+                    <Text text="{i18n>ADDITION_FROM_DEMO}" class="textBox noWrap" />
+                    <Text text="18 {i18n>OFFERS}" class="noWrap" />
+                </VBox>
+            </HBox>
+            <HBox>
+                <VBox class="Smallbox">
+                    <Title class="fontBlack Bold fontsize1_75" text="18" level="H1" />
+                    <Text text="{i18n>SUP_SDC}" class="textBox noWrap" />
+                </VBox>
+                <HBox class="midBox backgroundGreen sapUiSmallMarginBegin" justifyContent="Center">
+                    <VBox>
+                        <Title class="fontBlack Bold fontsize1_75" text="330" level="H1" />
+                        <Text text="{i18n>TOTAL_RIGHT_BUILDING}" class="textBox noWrap" />
+                    </VBox>
+                    <HBox class="vertical-line sapUiSmallMarginBeginEnd " />
+                    <VBox>
+                        <Text text="{i18n>TOTAL_OFFERSS}" class="textBox noWrap" />
+                        <Text text="18" class="noWrap" />
+                        <Text text="{i18n>MAX_HEIGHT}" class="textBox noWrap" />
+                        <Text text="182 " class="noWrap" />
+                    </VBox>
+                </HBox>
+            </HBox>
+        </l:Grid> -->
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>EXIST_OFFERS}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>CHOSE_EXISTS_OFFERS}" design="Bold" />
+                <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <VBox>
+                <layoutData>
+                    <l:GridData span="XL12 L12 M2 S6"/>
+                </layoutData>
+                <Text class="bold" text="{i18n>LIST_EXISTS_OFFERS}" />
+                <table:Table  class="customTable" visibleRowCount="{= (${JSON>/offersDemo}.length) }" id="table1" ariaLabelledBy="title" selectionMode="None" enableCellFilter="false" enableColumnReordering="false" noData="{i18n>NO_DATA_OFFERS_DEMO}" threshold="15" rows="{JSON>/offersDemo}" enableColumnFreeze="true" showColumnVisibilityMenu="false">
+                    <table:columns>
+                        <table:Column width="8rem" hAlign="Center">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>DESTINY_PURPOSE}" />
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>UNIT_OF_MESAURE}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Text text="{supplier}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="8rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>CONSTRUCTION_TYPE}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Select class="inputStyleTable" width="100%" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="8rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>CONST_METHOD}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Select class="inputStyleTable" width="100%" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>S.D.K}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="city" headerSpan="3">
+                            <table:multiLabels>
+                                <Label textAlign="Center" width="100%" text="{i18n>ABOVE_ENTRANCE_DETERMINES}"/>
+                                 <Label textAlign="Center" width="100%" text="{i18n>FLOORS}"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>ABOVE_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>HEIGHT}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>ABOVE_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>SCOPE_OF_CONSTRUCATION}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="city" headerSpan="3">
+                            <table:multiLabels>
+                                <Label textAlign="Center" width="100%" text="{i18n>BELOW_ENTRANCE_DETERMINES}"/>
+                                 <Label textAlign="Center" width="100%" text="{i18n>FLOORS}"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>BELOW_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>HEIGHT}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>BELOW_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>SCOPE_OF_CONSTRUCATION}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="7rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>TOTAL_SCOPE_OF_CONST}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <core:Icon src="sap-icon://delete" width="100%" color="black">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://delete" width="100%" color="red">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <core:Icon src="sap-icon://copy" width="100%" color="black">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://copy" width="100%" color="blue">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>OFFERS_FOR_CHANGE_DEST}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>CHOSE_BULIDNG_FOR_CHNAGE_DEST}" design="Bold" />
+                <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <VBox>
+                <layoutData>
+                    <l:GridData span="XL12 L12 M12 S6"/>
+                </layoutData>
+                <Text class="bold" text="{i18n>LIST_CHOSE_BULIDNG_FOR_CHNAGE_DEST}" />
+                <table:Table class="customTable" visibleRowCount="{= (${JSON>/offersDemo}.length) }" id="table2" ariaLabelledBy="title" selectionMode="None" enableCellFilter="false" enableColumnReordering="false" noData="{i18n>NO_DATA_OFFERS_DEMO}" threshold="15" rows="{JSON>/offersDemo}" enableColumnFreeze="true" showColumnVisibilityMenu="false">
+                    <table:columns>
+                        <table:Column width="8rem" hAlign="Center">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>NUM_AND_OFFER_STURC}" />
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>DESTINY}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Select class="inputStyleTable" width="100%" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>UNIT_OF_MESAURE}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Text text="{supplier}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="8rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>CONSTRUCTION_TYPE}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Select class="inputStyleTable" width="100%" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>S.D.K}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="city" headerSpan="3">
+                            <table:multiLabels>
+                                <Label textAlign="Center" width="100%" text="{i18n>ABOVE_ENTRANCE_DETERMINES}"/>
+                                 <Label textAlign="Center" width="100%" text="{i18n>FLOORS}"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>ABOVE_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>HEIGHT}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>ABOVE_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>SCOPE_OF_CONSTRUCATION}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="city" headerSpan="3">
+                            <table:multiLabels>
+                                <Label textAlign="Center" width="100%" text="{i18n>BELOW_ENTRANCE_DETERMINES}"/>
+                                 <Label textAlign="Center" width="100%" text="{i18n>FLOORS}"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>BELOW_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>HEIGHT}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>BELOW_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>SCOPE_OF_CONSTRUCATION}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="5.5rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label text="{i18n>SCOPE_OF_CHANGE}" textAlign="Center" width="100%"/>
+                                <Label text="{i18n>CONST}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Text />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3.5rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label text="{i18n>EXEMPTION}" textAlign="Center" width="100%"/>
+                                <Label text="{i18n>MPF}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <CheckBox class="customCheckBox" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <core:Icon src="sap-icon://delete" width="100%" color="black">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://delete" width="100%" color="red">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <core:Icon src="sap-icon://copy" width="100%" color="black">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://copy" width="100%" color="blue">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <HBox class="hr-style" />
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <Label class="fontBlack" text="{i18n>OFFEST_FOR_DEMO}" design="Bold">
+                <layoutData>
+                    <l:GridData span="L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <VBox>
+                <Label class="fontBlack" text="{i18n>CHOSE_BULDING_FOR_DEMO}" design="Bold" />
+                <MultiInput class="inputStyle" suggestionItems="{
+				path: '/ProductCollection',
+				sorter: { path: 'Name' }
+			}" valueHelpRequest="handleValueHelp">
+                    <core:Item key="{ProductId}" text="{Name}" />
+                </MultiInput>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" class="gridWrapper sapUiSmallMarginTop">
+        <l:Grid containerQuery="true">
+            <VBox>
+                <layoutData>
+                    <l:GridData span="XL12 L12 M12 S6"/>
+                </layoutData>
+                <Text class="bold" text="{i18n>LIST_OFFES_FOR_DEMO}" />
+                <table:Table class="customRedTable" visibleRowCount="{= (${JSON>/offersDemo}.length) }" id="table3" ariaLabelledBy="title" selectionMode="None" enableCellFilter="false" enableColumnReordering="false" noData="{i18n>NO_DATA_OFFERS_DEMO}" threshold="15" rows="{JSON>/offersDemo}" enableColumnFreeze="true" showColumnVisibilityMenu="false">
+                    <table:columns>
+                        <table:Column width="8rem" hAlign="Center">
+                            <table:multiLabels>
+                                <Label text="{i18n>BULDING_NUM}" textAlign="Center" width="100%"/>
+                                <Label text="{i18n>FOR_CONST}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>UNIT_OF_MESAURE}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Text text="{supplier}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="7rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>DEG_OF_PRES}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Select class="inputStyleTable" width="100%" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label text="{i18n>REPORT}" textAlign="Center" width="100%"/>
+                                <Label text="{i18n>CONSERVATION}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://upload" class="sapUiSmallMarginBegin" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <Label text="{i18n>ASBESTOS}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Select class="inputStyleTable" width="100%" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="city" headerSpan="3">
+                            <table:multiLabels>
+                                <Label textAlign="Center" width="100%" text="{i18n>DEST_ABOVE_ENTRANCE_DETERMINES}"/>
+                                    <Label textAlign="Center" width="100%" text="{i18n>FLOORS}"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>DEST_ABOVE_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>HEIGHT}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>DEST_ABOVE_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>SCOPE_OF_DEST}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="city" headerSpan="3">
+                            <table:multiLabels>
+                                <Label textAlign="Center" width="100%" text="{i18n>DEST_BELOW_ENTRANCE_DETERMINES}"/>
+                                 <Label textAlign="Center" width="100%" text="{i18n>FLOORS}"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="4rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>DEST_BELOW_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>HEIGHT}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="6rem" sortProperty="phone">
+                            <table:multiLabels>
+                                <Label text="{i18n>DEST_BELOW_ENTRANCE_DETERMINES}"/>
+                                <Label text="{i18n>SCOPE_OF_DEST}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Input class="inputStyleTable"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="5.5rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label text="{i18n>TOTAL_SCOPE}" textAlign="Center" width="100%"/>
+                                <Label text="{i18n>DEST}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <Text />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3.5rem" sortProperty="supplier" filterProperty="supplier">
+                            <table:multiLabels>
+                                <Label text="{i18n>EXEMPTION}" textAlign="Center" width="100%"/>
+                                <Label text="{i18n>MPF}" textAlign="Center" width="100%"/>
+                            </table:multiLabels>
+                            <table:template>
+                                <CheckBox class="customCheckBox" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <core:Icon src="sap-icon://delete" width="100%" color="black">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://delete" width="100%" color="red">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="3rem">
+                            <table:multiLabels>
+                                <Label visible="false" />
+                                <core:Icon src="sap-icon://copy" width="100%" color="black">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:multiLabels>
+                            <table:template>
+                                <core:Icon src="sap-icon://copy" width="100%" color="blue">
+                                    <core:layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </core:layoutData>
+                                </core:Icon>
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
+            </VBox>
+        </l:Grid>
+    </l:VerticalLayout>
+
 </core:FragmentDefinition>
